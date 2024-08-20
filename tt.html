@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Video Background</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="test.css">
+    <style>
+        /* Video Background */
+        .video-background {
+            filter: brightness(2.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Ensure it stays behind content *
+            /* Increase brightness (1.5x brighter) */
+            }
+      
+
+        /* Overlay to adjust text visibility over video */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+            z-index: 1;
+        }
+
+        /* Main content should have a higher z-index */
+        .main-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background: transparent;
+            border: none;
+        }
+
+        .navbar-brand img {
+            width: 50px;
+        }
+
+        .nav-links {
+            flex: 0;
+            display: flex;
+            justify-content: center;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            border-radius: 8px;
+            padding: 10px 20px;
+        }
+
+        .nav-item {
+            margin: 0 15px;
+        }
+
+        .btn-blur {
+            background: rgba(255, 255, 255, 0.7);
+            border: none;
+            color: #007bff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            transition: background 0.3s ease;
+        }
+
+        .btn-blur:hover {
+            background: rgba(255, 255, 255, 1);
+            color: #0056b3;
+        }
+
+        .nav-link {
+            color: white !important;
+        }
+
+        .nav-link:hover {
+            color: #f8f9fa !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video Background -->
+    <video autoplay muted loop class="video-background">
+        <source src="tech.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="your logo">
+                </a>
+                <!-- Navbar Toggler Button for Mobile -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <div class="nav-links">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="home.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="services.html">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="team.html">Team</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contacts.html">Apply</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn btn-blur" onclick="window.location.href='index.html'">Login</button>
+            </nav>
+        </header>
+
+        <!-- Your page content -->
+        <main>
+            <h1>Welcome to Our Website</h1>
+            <p>This is a sample text on top of the video background.</p>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS, jQuery, and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+</body>
+</html>

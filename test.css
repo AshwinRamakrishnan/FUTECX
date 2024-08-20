@@ -1,0 +1,98 @@
+/* Common styles for all screen sizes */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 1s ease-in-out;
+}
+
+h1, p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+    padding: 50px 0;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+/* Sections and team members */
+.section {
+    margin: 50px 0;
+}
+
+.team-member, .service-item, .cta {
+    margin: 20px 0;
+    padding: 20px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 8px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+    }
+
+    .section {
+        padding: 3em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .team-member, .service-item, .cta {
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .btn-blur {
+        width: 100%;
+        padding: 15px;
+    }
+}

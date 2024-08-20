@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login, Register, and Forgot Password</title>
+    <link rel="stylesheet" href="intex.css"> <!-- Link to your CSS file -->
+</head>
+<style>
+    body {
+        background-image: url('Meeravathi.jpeg'); /* Path to your image */
+        background-size: cover; /* Ensure the image covers the whole screen */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        background-position: center; /* Center the background image */
+    }
+    h2 {
+        color: rgb(255, 255, 255); /* Change this color to the desired color */
+    }
+    label {
+        color: rgb(255, 255, 255); /* Change this color to the desired color */
+    }
+    .remember-forgot a {
+        color: rgb(231, 231, 255); /* Change this color to the desired color */
+        text-decoration: none; /* Optional: remove underline */
+    }
+    
+    .remember-forgot label {
+        color: rgb(255, 255, 255); /* Change this color to the desired color */
+    }
+    .register-link p,
+    .register-link a {
+        color: rgb(255, 255, 255); /* Change this color to the desired color */
+    }
+
+    .register-link a:hover {
+        text-decoration: underline;
+    }
+    /* You can add other CSS styles here */
+</style>
+<body>
+    <div class="wrapper">
+        <main>
+            <article data-glow>
+                <div class="form-container">
+                    <div id="login-form" class="form-section active">
+                        <h2>Login</h2>
+                        <form action="login.php" method="POST">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <div class="input-container">
+                                    <input type="text" id="username" name="username" required>
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASVJREFUSEu11cEqRUEYwPHftRU7Ya8UCzv7+waSB5BSSlkhC4W6kdhRykb2NrL1FEJ5AUoW8gLcqXOVcY9z5jhndnNm5v+f75vvzLQ03FoN88WCBXQwWVH8hG1c9dbHggdMVYT3lj1iOk/w+U/4L24cQZ7gHVu4zgghlfsYytnQN7esYBGXEWwVp3UJRvAWwcbxXJdgFK8RbAwvdQmWcBHBVnBWlyAc8mZ2yAOYxwGG6xKkVm9yFTUq+MA5brqpuctMM5jDMgb72EtHEEqzjfucEGZx2+eHKy1Yw0lBfsLhH0ZzSgtSc194FzV+m4ZLLNT3RMWtF74Hedxd7ESDe91++P5nS3kyj7Ce0Y6xUQQP4ymCMD9IQisFryIos+kfc1IjSBZ8AVXgMxk/2d8tAAAAAElFTkSuQmCC" class="icon"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <div class="input-container">
+                                    <input type="password" id="password" name="password" required>
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAR9JREFUSEvF1b8uBUEUx/HP9QqiUPqTSKi8AgUPIB5AJ1SioyBuolCoeAYSoia8go5EQqIShXgDwSSzibu5u7O79uZONdkz+/ue85szMx0DHp0B66sKWME6FmJCdzjBVSrBKoAjbBcI7WG/DJICrOI8ChzgNM43sRPnS7gpgqQA95jHFo5zIgHQxTWWmwK+MPLr9xg+ciLjeMMnRpsCvuOPRZWm4skuSgmk4sMBhJ4PmzeT6vFc/Am7uPj7vZ+3D5itKZ4tf8RcCpD52pDRa3u/CoYGOMNGLCtcH2sFJfYkXaeCCbxG0Sk8tw0IJ/c9ik7ipW3AJUILh3GLxbYBQS+ztKwRGu9Ba4CBH7Tg8yGma560yldFTd3y5akX7d+wH5leMxkPQZ+dAAAAAElFTkSuQmCC" class="icon"/>
+                                </div>
+                            </div>
+                            <div class="remember-forgot">
+                                <label><input type="checkbox"> Remember me</label>
+                                <a href="#" onclick="toggleForms('forgot-password-form')">Forgot password?</a>
+                            </div>
+                            <div class="button-container">
+                                <button class="button" data-glow>Login</button>
+                            </div>
+                            <div class="register-link">
+                                <p>Don't have an account? <a href="#" onclick="toggleForms('register-form')">Register</a></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="register-form" class="form-section">
+                        <h2>Register</h2>
+                        <form action="register.php" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <div class="input-container">
+                                    <input type="text" id="name" name="name" required>
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAN9JREFUSEvtlcERgDAMQ8uf/gch3UEONeAXYgCbCsk7aQYyVapR4AOGwP3A5cAAKSZTxogTpweqQgJ13XHutHHhJrb6ckBxPh8xgy6OnGkP2m6H2QFtzUtdQO4CrTVNroFLWmsInKrSm8oO3PvYx2gOc4fZyMS+NcApuqDlR7Kyb4H4JGPIv/X4LMY92kz9+DzGA4UjkAAAAAElFTkSuQmCC" class="icon"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <div class="input-container">
+                                    <input type="email" id="email" name="email" required>
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAARJJREFUSEvtlcERwjAMQ5/t/3gKF9AJNoBXgFtZKmhDMlVo1joChlwPvA5cAASyeTtiGkXYGaS0BFrdL9Jjcyv8OAj8aMawHt8cBnbAlskZ6eAOnOfrgAXZeqYPTE7jMHR7+IuNpu/2Gq3GhErqGhS8EzgnG5gTRvPW5zCrSuKYsml0BU9rYgqDSSwaj8t4Mm6g9lXFr2QOK4MbJnR3xjxQeqR8w+L0GDnDdWeElcAAAAASUVORK5CYII=" class="icon"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-password">Password</label>
+                                <div class="input-container">
+                                    <input type="password" id="reg-password" name="password" required>
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAR9JREFUSEvF1b8uBUEUx/HP9QqiUPqTSKi8AgUPIB5AJ1SioyBuolCoeAYSoia8go5EQqIShXgDwSSzibu5u7O79uZONdkz+/ue85szMx0DHp0B66sKWME6FmJCdzjBVSrBKoAjbBcI7WG/DJICrOI8ChzgNM43sRPnS7gpgqQA95jHFo5zIgHQxTWWmwK+MPLr9xg+ciLjeMMnRpsCvuOPRZWm4skuSgmk4sMBhJ4PmzeT6vFc/Am7uPj7vZ+3D5itKZ4tf8RcCpD52pDRa3u/CoYGOMNGLCtcH2sFJfYkXaeCCbxG0Sk8tw0IJ/c9ik7ipW3AJUILh3GLxbYBQS+ztKwRGu9Ba4CBH7Tg8yGma560yldFTd3y5akX7d+wH5leMxkPQZ+dAAAAAElFTkSuQmCC" class="icon"/>
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <button class="button" data-glow>Register</button>
+                            </div>
+                            <div class="register-link">
+                                <p>Already have an account? <a href="#" onclick="toggleForms('login-form')">Login</a></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="forgot-password-form" class="form-section">
+                        <h2>Forgot Password</h2>
+                        <form action="forgot_password.php" method="POST">
+                            <div class="form-group">
+                                <label for="reset-email">Email</label>
+                                <div class="input-container">
+                                    <input type="email" id="reset-email" name="email" required>
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAARJJREFUSEvtlcERwjAMQ5/t/3gKF9AJNoBXgFtZKmhDMlVo1joChlwPvA5cAASyeTtiGkXYGaS0BFrdL9Jjcyv8OAj8aMawHt8cBnbAlskZ6eAOnOfrgAXZeqYPTE7jMHR7+IuNpu/2Gq3GhErqGhS8EzgnG5gTRvPW5zCrSuKYsml0BU9rYgqDSSwaj8t4Mm6g9lXFr2QOK4MbJnR3xjxQeqR8w+L0GDnDdWeElcAAAAASUVORK5CYII=" class="icon"/>
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <button class="button" data-glow>Reset Password</button>
+                            </div>
+                            <div class="register-link">
+                                <p>Remembered your password? <a href="#" onclick="toggleForms('login-form')">Login</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script>
+        function toggleForms(formId) {
+            document.querySelectorAll('.form-section').forEach(form => form.classList.remove('active'));
+            document.getElementById(formId).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const syncPointer = ({ x: pointerX, y: pointerY }) => {
+                const x = pointerX.toFixed(2);
+                const y = pointerY.toFixed(2);
+                const xp = (pointerX / window.innerWidth).toFixed(2);
+                const yp = (pointerY / window.innerHeight).toFixed(2);
+                document.documentElement.style.setProperty('--x', x);
+                document.documentElement.style.setProperty('--xp', xp);
+                document.documentElement.style.setProperty('--y', y);
+                document.documentElement.style.setProperty('--yp', yp);
+            };
+
+            document.body.addEventListener('pointermove', syncPointer);
+        });
+    </script>
+</body>
+</html>
