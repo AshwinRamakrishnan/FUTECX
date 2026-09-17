@@ -1,0 +1,12 @@
+   body { font-family: 'Poppins', sans-serif; }
+    /* Navbar */
+    .navbar { background: #111827; }
+    .navbar-brand, .nav-link { color: #f8fafc !important; font-weight: 500; }
+    .nav-link:hover { color: #38bdf8 !important; }
+
+    <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">TN-FUTECX</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>

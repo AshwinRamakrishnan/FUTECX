@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page Title (SEO Optimized) -->
+    <title>FUTECX — Meet Our Team | TN-FUTECX</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/public/FUTECX.ico" type="image/x-icon" />
+
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Meet the FUTECX Team — the talented innovators behind TN-FUTECX. Explore our team members, their expertise, and contributions to technology and innovation." />
+    <meta name="keywords" content="FUTECX, TN-FUTECX, FUTECX Team, FUTECX Members, FUTECX Technology, Innovators, TN-FUTECX Team" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="FUTECX — Meet Our Team | TN-FUTECX" />
+    <meta property="og:description" content="Discover the FUTECX Team driving innovation and technology at TN-FUTECX. Learn more about our skilled members and projects." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tn-futecx.web.app/team" />
+    <meta property="og:image" content="https://tn-futecx.web.app/public/FUTECX.ico" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FUTECX — Meet Our Team | TN-FUTECX" />
+    <meta name="twitter:description" content="Discover the FUTECX Team driving innovation and technology at TN-FUTECX. Learn more about our skilled members and projects." />
+    <meta name="twitter:image" content="https://tn-futecx.web.app/public/FUTECX.ico" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script type="module" src="/js/email.js"></script>
+    
+</head>
+<body>
+
+  
+<STYLE>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    :root {
+        --brand: #2979ff;      
+        --ink: #0f172a;        
+        --muted: #64748b;      
+        --surface: #0b1220;    
+        --glass: rgba(255, 255, 255, 0.75);
+        --radius: 1.25rem;     
+        --shadow: 0 10px 30px rgba(2, 6, 23, 0.15);
+      }
+
+
+      .card .content ul li {
+        font-size: 12px;
+        line-height: 1.6; /* நல்ல spacing க்கு */
+        color: #000;
+    }
+    
+    
+    
+
+
+
+
+
+      body { font-family: 'Poppins', sans-serif; color: var(--ink); }
+      a { text-decoration: none; }
+  
+      /* Navbar */
+      .navbar { backdrop-filter: saturate(140%) blur(8px); }
+      .nav-glass { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 999px; box-shadow: var(--shadow); padding: .35rem .75rem; }
+      .btn-blur { background: var(--glass); border: none; color: var(--brand); border-radius: 999px; padding: .6rem 1rem; transition: all .25s ease; }
+      .btn-blur:hover { background: #fff; box-shadow: var(--shadow); }
+  
+      /* Hero */
+      .hero { position: relative; min-height: 70vh; display: grid; place-items: center; text-align: center; color: #fff; overflow: clip; }
+      .hero::before { content: ""; position: absolute; inset: 0; background: url('M.jpg') center/cover no-repeat; filter: brightness(70%); z-index: -2; }
+      .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,18,32,.65), rgba(11,18,32,.35) 45%, rgba(11,18,32,.75)); z-index: -1; }
+      .hero .badge { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25); border-radius: 999px; color: #fff; backdrop-filter: blur(6px); }
+  
+      section { padding: 72px 0; }
+      .section-title { color: var(--brand); font-weight: 800; letter-spacing: .3px; }
+      .section-sub { color: var(--muted); }
+  
+
+/* General container styling */
+.containers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+/* General Card Styling */
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover Effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Header Styling */
+.card .header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Card Header Main Content */
+.card .header .main {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.card .header .main .name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.card .header .main .sub-name {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Card Header Image */
+.card .header .image {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Card Image Hover Effect */
+.card .header .image .hover {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card .header .image:hover .hover {
+    opacity: 1;
+}
+
+/* Card Content Styling */
+.card .content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .content .section-content {
+    display: none;
+}
+
+.card .content .section-content.active {
+    display: block;
+}
+
+.card .content .section-content .title {
+    font-size: 1.3rem;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.card .content .section-content .text {
+    color: #000000;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Icons Container */
+.icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.icons-container .icon {
+    color: #555;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.icons-container.icon:hover {
+    color: #007BFF;
+}
+
+/* Buttons Styling */
+.buttons-wrap {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-wrap {
+    flex: 1;
+}
+
+.button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .containers {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+.button {
+    background-color: #007bff; /* Example color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Example hover color */
+}
+</STYLE>
+
+  <!-- NAVBAR -->
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top py-3 bg-white bg-opacity-75 border-bottom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html"><img src="lo.jpeg" alt="TN-FUTECX Logo" style="width:150px;height:auto;" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav mx-auto nav-glass">
+          <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="service.html">Our Expertise</a></li>
+          <li class="nav-item"><a class="nav-link px-3  active" href="team.html">Team</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="ms-lg-3 mt-3 mt-lg-0" id="authSection">
+          <!-- Initially shows login -->
+          <button id="loginBtn" class="btn btn-blur">Login</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  
+
+
+
+
+  
+<!-- TN-FUTECX Custom Login Popup -->
+<div id="loginPopup" class="popup-overlay">
+    <div class="popup-box">
+      <h2>⚠️ Login Required</h2>
+      <p>To continue exploring <strong>TN-FUTECX</strong>, please login to your account.</p>
+      <div class="popup-actions">
+        <button id="loginNow" class="btn btn-primary">Login Now</button>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+  /* === TN-FUTECX Popup Design === */
+  .popup-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+  
+  .popup-box {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    padding: 30px 40px;
+    width: 350px;
+    animation: popupSlide 0.4s ease-in-out;
+  }
+  
+  .popup-box h2 {
+    color: #1a237e;
+    margin-bottom: 10px;
+  }
+  
+  .popup-box p {
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .popup-actions .btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes popupSlide {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  </style>
+  
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container position-relative" data-aos="fade-up" data-aos-duration="900">
+      <span class="badge px-3 py-2 mb-3"><i class="fa-solid fa-users me-2"></i> Innovators • Builders • Leaders</span>
+      <h1 class="display-5 fw-bold mb-3">Meet the <span class="text-info">TN-FUTECX</span> Team</h1>
+      <p class="lead mb-0">The passionate young innovators turning ideas into real-world impact.</p>
+    </div>
+  </header>
+
+
+<section class="about-section" data-aos="slide-up" data-aos-duration="1500">
+  <div class="containers">
+
+
+
+
+
+
+
+    
+    <!-- Card 1: Ashwin -->
+    <div class="card" id="card1">
+       <div class="header">
+           <div class="ham-menu">
+               <div class="center"></div>
+           </div>
+           <a href="mailto:ashwinkalai2k@gmail.com" class="mail">
+               <i class="far fa-envelope"></i>
+           </a>
+           
+           
+           <div class="main">
+               <div class="image" style="background-image: url('ashwin.jpeg');">
+                 
+                   <div class="hover">
+                       <i class=""></i>
+                   </div>
+               </div>
+              
+               <h3 class="name">Ashwin R</h3>
+               <h3 class="sub-name">Project Lead</h3>
+           </div>
+       </div>
+       <div class="content">
+           <div class="left">
+               <div id="about1" class="section-content active">
+                   <h3 class="title">About</h3>
+                   <p class="text">A project lead with expertise in full-stack development, Ashwin oversees the FUTECX project. He’s known for his leadership skills, strategic planning, and innovative approach in AI and technology.</p>
+
+                
+                   <div class="icons-container">
+                       <a href="https://github.com/AshwinRamakrishnan" class="icon" target="_blank">
+                           <i class="fab fa-github"></i>
+                       </a>
+                       <a href="https://www.linkedin.com/in/ashwin-ramakrishnan-b328a6298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="icon" target="_blank">
+                           <i class="fab fa-linkedin-in"></i>
+                       </a>
+                    
+                       </a>
+                       <a href="https://g.dev/AshwinRamakrishnan" class="icon" target="_blank">
+                           <i class="fab fa-google"></i> <!-- Google icon or use a more specific one if available -->
+                       </a>
+                       <a href="https://x.com/RAshwin2k?t=iTYdkOAasJn998jp7lrktw&s=09" class="icon" target="_blank">
+                           <i class="fab fa-x"></i>
+                       </a>
+                   </div>
+             
+               </div>
+               <div id="experience1" class="section-content">
+                <h3 class="title">Professional Experience</h3>
+                <ul style="color: #000000; line-height: 1.6;">
+              
+                  <li>
+                    <strong>Founder & Project Lead – FUTECX</strong> (2023 – Present)<br>
+                    • Founded and led a startup delivering AI, ML, and Cloud-based solutions.<br>
+                    • Defined product vision, roadmap, and execution across multiple phases.<br>
+                    • Built and managed a high-performing team of young innovators.<br>
+                    • Spearheaded scalable AI/web applications, earning recognition at hackathons & startup events.
+                  </li>
+              
+                  <li>
+                    <strong>Full-Stack Developer & Technical Lead</strong><br>
+                    • Developed full-stack applications using React, Node.js, Python, and Flask.<br>
+                    • Implemented responsive UI/UX designs and optimized backend performance.<br>
+                    • Deployed and scaled applications in cloud environments with high reliability.<br>
+                    • Improved code quality through reviews and best practice enforcement.
+                  </li>
+              
+                  <li>
+                    <strong>Educator & Mentor</strong><br>
+                    • Conducted workshops and training sessions on AI, programming, and web technologies.<br>
+                    • Mentored students and junior developers to build industry-ready skills.<br>
+                    • Fostered an innovation-driven culture within FUTECX and student communities.
+                  </li>
+              
+                  <li>
+                    <strong>Startup Initiatives & Innovation</strong><br>
+                    • Designed prototypes and MVPs (AI chatbots, mental wellness tools, automation apps).<br>
+                    • Applied AI to solve real-world challenges in education, wellness, and productivity.<br>
+                    • Exploring 3D Animation and VFX integration for future technology products.<br>
+                    • Actively engaged in hackathons and innovation challenges with entrepreneurial drive.
+                  </li>
+              
+                </ul>
+              </div>
+              
+               <div id="contact1" class="section-content">
+                   <h3 class="title">Contact</h3>
+                   <p class="text">To connect with Ashwin, you can reach out via:</p>
+                   <p class="text">Email: ashwinkalai2k@gmail.com</p>
+                  
+                   <p class="text">LinkedIn: <a href="https://www.linkedin.com/in/ashwin-ramakrishnan-b328a6298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text">linkedin.com/in/ashwin</a></p>
+               </div>
+           
+               <div class="buttons-wrap">
+                   <div class="button-wrap">
+                       <button class="button" data-target="about1">About</button>
+                   </div>
+                   <div class="button-wrap">
+                       <button class="button" data-target="experience1">Experience</button>
+                   </div>
+                   <div class="button-wrap">
+                       <button class="button" data-target="contact1">Contact</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+   <div class="card" id="card2">
+    <div class="header">
+        <div class="ham-menu">
+            <div class="center"></div>
+        </div>
+        <a href="mailto:meeracse1@gmail.com" class="mail">
+            <i class="far fa-envelope"></i>
+        </a>
+        <div class="main">
+            <div class="image"style="background-image: url('ashwin.png');">
+                <div class="hover">
+                    <i class="fas fa-camera fa-2x"></i>
+                </div>
+            </div>
+            <h3 class="name">Meeravathi S</h3>
+            <h3 class="sub-name">Frontend Developer</h3>
+        </div>
+    </div>
+    <div class="content">
+        <div class="left">
+            <div id="about2" class="section-content active">
+                <h3 class="title">About</h3>
+                <p class="text">"A talented frontend developer specializing in HTML and CSS, Meeravathi’s exceptional design skills and attention to detail make her an invaluable part of the FUTECX team as well as the Project-K Girls Team Lead."</p>
+                <div class="icons-container">
+                    <a href="https://www.linkedin.com/in/meeravathi-sivakumar-5b1478325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="icon" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://g.dev/MeeravathiSivakumar" class="icon" target="_blank">
+                        <i class="fab fa-google"></i> <!-- Google icon or use a more specific one if available -->
+                    </a>
+                </div>
+            </div>
+            <div id="experience2" class="section-content">
+                <h3 class="title">Experience</h3>
+                <p class="text">Meeravathi's experience includes:</p>
+                <ul style="color: #000000;">
+                    <li><strong>Frontend Developer at FUTECX:</strong> Responsible for designing and developing the user interface for the FUTECX website, ensuring responsiveness and cross-browser compatibility.</li>
+                    <li><strong>Intern at TechSolutions:</strong> Assisted in the development of web applications and gained hands-on experience with various frontend technologies.</li>
+                    <li><strong>Project-K Girls Team Lead:</strong> Led the Girls team in Project-K, coordinating tasks, overseeing the design process, and ensuring the successful completion of milestones.</li>
+                </ul>
+            </div>
+            <div id="contact2" class="section-content">
+                <h3 class="title">Contact</h3>
+                <p class="text">You can contact Meeravathi through:</p>
+                <p class="text">Email: meeracse1@gmail.com</p>
+               
+                <p class="text">LinkedIn: <a href="https://www.linkedin.com/in/meeravathi-sivakumar-5b1478325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text">linkedin.com/in/meeravathi</a></p>
+            </div>
+         
+            <div class="buttons-wrap">
+                <div class="button-wrap">
+                    <button class="button" data-target="about2">About</button>
+                </div>
+                <div class="button-wrap">
+                    <button class="button" data-target="experience2">Experience</button>
+                </div>
+                <div class="button-wrap">
+                    <button class="button" data-target="contact2">Contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Card 3: A. Arunprasath -->
+<div class="card" id="card3">
+    <div class="header">
+        <div class="ham-menu">
+            <div class="center"></div>
+        </div>
+        <a href="mailto:Prasathaarun787@gmail.com" class="mail">
+            <i class="far fa-envelope"></i>
+        </a>
+        <div class="main">
+            <div class="image" style="background-image: url('arun.jpg');">
+                <div class="hover">
+                    <i class="fas fa-camera fa-2x"></i>
+                </div>
+            </div>
+            <h3 class="name">A. Arunprasath</h3>
+            <h3 class="sub-name">Frontend Developer & Designer</h3>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="left">
+            <!-- About -->
+            <div id="about3" class="section-content active">
+                <h3 class="title">About</h3>
+                <p class="text">
+                    A. Arunprasath is a passionate developer and designer with 3 years of working experience. 
+                    He specializes in frontend development and UI/UX design, contributing actively as a FUTECX Tech Developer. 
+                    
+                </p>
+                <div class="icons-container">
+                    <a href="https://github.com/arunprasath" class="icon" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/a-arun-prasath-153498305?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="icon" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Experience -->
+            <div id="experience3" class="section-content">
+                <h3 class="title">Experience</h3>
+                <p class="text">Arunprasath's experience includes:</p>
+                <ul style="color:#000;">
+                    <li><strong>Frontend Developer & Designer:</strong> Building modern, responsive websites and user-friendly UI designs.</li>
+                    <li><strong>YU Tech Developer:</strong> Supporting projects with strong frontend, backend, and design contributions.</li>
+                    <li><strong>3 Years of Experience:</strong> Worked on multiple projects and guided peers with new project ideas and processes.</li>
+                    <li><strong>Business Management:</strong> Applied leadership, teamwork, and project management strategies in tech projects.</li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div id="contact3" class="section-content">
+                <h3 class="title">Contact</h3>
+                <p class="text">Email: <a href="mailto:Prasathaarun787@gmail.com">Prasathaarun787@gmail.com</a></p>
+                <p class="text">GitHub: <a href="https://github.com/arunprasath" target="_blank">github.com/arunprasath</a></p>
+                <p class="text">LinkedIn: <a href="https://www.linkedin.com/in/a-arun-prasath-153498305?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">linkedin.com/in/a-arun-prasath</a></p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="buttons-wrap">
+                <div class="button-wrap">
+                    <button class="button" data-target="about3">About</button>
+                </div>
+                <div class="button-wrap">
+                    <button class="button" data-target="experience3">Experience</button>
+                </div>
+                <div class="button-wrap">
+                    <button class="button" data-target="contact3">Contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- Card 2: Kiruthika -->
+   
+   <!-- <div class="card" id="card3">
+       <div class="header">
+           <div class="ham-menu">
+               <div class="center"></div>
+           </div>
+           <a href="mailto:kiruthikamom1983@gmail.com" class="mail">
+               <i class="far fa-envelope"></i>
+           </a>
+           <div class="main">
+               <div class="image" style="background-image: url('Kiruthika.jpeg');">
+                   <div class="hover">
+                       <i class="fas fa-camera fa-2x"></i>
+                   </div>
+               </div>
+               <h3 class="name">Kiruthika B</h3>
+               <h3 class="sub-name">Designer</h3>
+           </div>
+       </div>
+       <div class="content">
+           <div class="left">
+               <div id="about3" class="section-content active">
+                   <h3 class="title">About</h3>
+                   <p class="text">A creative designer with a knack for translating ideas into compelling visuals. Kiruthika's work on FUTECX includes creating engaging UI/UX designs that enhance the project’s overall look and feel.</p>
+                   <div class="icons-container">
+               
+                    </a>
+                    <a href="https://g.dev/Kiruthikabaskar" class="icon" target="_blank">
+                        <i class="fab fa-google"></i> 
+                    </a>
+                 </div>
+               </div>
+               <div id="experience3" class="section-content">
+                   <h3 class="title">Experience</h3>
+                   <p class="text">Kiruthika's professional background includes:</p>
+                   <ul style="color: #000000;">
+                       <li><strong>Lead Designer at FUTECX:</strong> Designed and developed user interfaces for the FUTECX website, focusing on creating a seamless user experience.</li>
+                       <li><strong>Intern at CreativeDesigns:</strong> Gained experience in graphic design and UI/UX through various projects and client engagements.</li>
+                       <li><strong>Freelance Graphic Designer:</strong> Provided design services for a range of clients, including branding, marketing materials, and digital content.</li>
+                   </ul>
+               </div>
+               <div id="contact3" class="section-content">
+                   <h3 class="title">Contact</h3>
+                   <p class="text">For design inquiries, Kiruthika can be reached via:</p>
+                   <p class="text">Email: kiruthika@example.com</p>
+                 
+                   <p class="text">LinkedIn: <a href="https://linkedin.com/in/kiruthika" class="text">linkedin.com/in/kiruthika</a></p>
+               </div>
+               <div class="buttons-wrap">
+                   <div class="button-wrap">
+                       <button class="button" data-target="about3">About</button>
+                   </div>
+                   <div class="button-wrap">
+                       <button class="button" data-target="experience3">Experience</button>
+                   </div>
+                   <div class="button-wrap">
+                       <button class="button" data-target="contact3">Contact</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+
+  
+   
+
+ <!-- <div class="card" id="card4">
+    <div class="header">
+        <div class="ham-menu">
+            <div class="center"></div>
+        </div>
+        <a href="mailto:sandhiyaravikumar05@gmail.com" class="mail">
+            <i class="far fa-envelope"></i>
+        </a>
+        <div class="main">
+            <div class="image" style="background-image: url('sandy.jpeg');">
+                <div class="hover">
+                    <i class="fas fa-camera fa-2x"></i>
+                </div>
+            </div>
+            <h3 class="name">Sandhiya R</h3>
+            <h3 class="sub-name">Designer & Developer</h3>
+        </div>
+    </div>
+    <div class="content">
+        <div class="left">
+            <div id="about4" class="section-content active">
+                <h3 class="title">About</h3>
+                <p class="text"> Sandhiya is a key designer and developer contributing to the success of the FUTECX project. Her creativity and technical expertise ensure smooth functionality and user-friendly designs.</p>
+                <div class="icons-container">
+                    <a href="https://www.linkedin.com/in/sandhiya-profile" class="icon" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div id="experience4" class="section-content">
+                <h3 class="title">Experience</h3>
+                <p class="text">Sandhiya's experience includes:</p>
+                <ul style="color: #000000;">
+                    <li><strong>Designer & Developer at FUTECX:</strong> Played a crucial role in designing the UI and ensuring an optimal user experience.</li>
+                    <li><strong>Freelance Developer:</strong> Worked on various design and development projects, creating custom websites and interfaces.</li>
+                </ul>
+            </div>
+            <div id="contact4" class="section-content">
+                <h3 class="title">Contact</h3>
+                <p class="text">You can contact Sandhiya through:</p>
+                <p class="text">Email: sandhiyaemail@example.com</p>
+                <p class="text">LinkedIn: <a href="https://www.linkedin.com/in/sandhiya-profile" class="text">linkedin.com/in/sandhiya</a></p>
+            </div>
+
+            <div class="buttons-wrap">
+                <div class="button-wrap">
+                    <button class="button" data-target="about4">About</button>
+                </div>
+                <div class="button-wrap">
+                    <button class="button" data-target="experience4">Experience</button>
+                </div>
+                <div class="button-wrap">
+                    <button class="button" data-target="contact4">Contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+
+
+
+
+
+
+ <!-- Card 4: Mohamed Jiyavudeen -->
+ <!-- <div class="card" id="card6">
+    <div class="header">
+        <div class="ham-menu">
+            <div class="center"></div>
+        </div>
+        <a href="mailto:sabaridsp2201@gmail.com" class="mail">
+            <i class="far fa-envelope"></i>
+        </a>
+        <div class="main">
+            <div class="image" style="background-image: url('sabari.jpeg');">
+                <div class="hover">
+                    <i class=""></i>
+                </div>
+            </div>
+            <h3 class="name">Adhitya Sabari</h3>
+            <h3 class="sub-name">Tech Warriors Lead</h3>
+        </div>
+    </div>
+    <div class="content">
+        <div class="left">
+            <div id="about6" class="section-content active">
+                <h3 class="title">About</h3>
+                <p class="text"> 
+                    Adhitya Sabari leads the Tech Warriors in Project K, overseeing research, scriptwriting, character design, and architecture, shaping the narrative and visuals with authenticity.</p>
+                <div class="icons-container">
+                    <a href="https://github.com/" class="icon" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/" class="icon" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://g.dev/" class="icon" target="_blank">
+                        <i class="fab fa-google"></i>
+                    </a>
+                </div>
+            </div>
+            <div id="experience6" class="section-content">
+                <h3 class="title">Experience</h3>
+                <p class="text">Adhitya Sabari's professional experience includes:</p>
+                <ul style="color: #000000;">
+                    <li><strong>Boys Team Lead:</strong> Led the boys' team in managing technical tasks and guiding development efforts.</li>
+                    <li><strong>Head of All Groups:</strong> Oversaw multiple project groups, ensuring cross-team collaboration and project progression.</li>
+                    <li><strong>Tech Warriors Community Lead:</strong> Managed the Tech Warriors community, fostering innovation, knowledge sharing, and team engagement.</li>
+                </ul>
+            </div>
+            <div id="contact6" class="section-content">     
+                <h3 class="title">Contact</h3>
+                <p class="text">To connect with Adhitya Sabari, you can reach out via:</p>
+                <p class="text">Email: sabaridsp2201@gmail.com</p>
+                <p class="text">LinkedIn: <a href="https://www.linkedin.com/in/" class="text">linkedin.com/in/Adhitya Sabari</a></p>
+            </div>
+            <div class="buttons-wrap">
+                <div class="button-wrap">
+                    <button class="button" data-target="about6">About</button>
+                </div>
+                <div class="button-wrap">
+                    <button class="button" data-target="experience6">Experience</button>
+                </div>
+                <div class="button-wrap">
+                    <button class="button" data-target="contact6">Contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+ <!-- Card 7: E. Prem -->
+   <!--<div class="card" id="card7">
+    <div class="header">
+        <div class="ham-menu">
+            <div class="center"></div>
+        </div>
+        <a href="mailto:dineshprem3512@gmail.com" class="mail">
+            <i class="far fa-envelope"></i>
+        </a>
+        <div class="main">
+            <div class="image" style="background-image: url('prem.jpeg');">
+                <div class="hover">
+                    <i class="fas fa-camera fa-2x"></i>
+                </div>
+            </div>
+            <h3 class="name">Prem E</h3>
+            <h3 class="sub-name">Research & Creative Lead</h3>
+        </div>
+    </div>
+    <div class="content">
+        <div class="left">
+           
+            <div id="about7" class="section-content active">
+                <h3 class="title">About</h3>
+                <p class="text">A dedicated researcher and scriptwriter shaping the  project K. Prem provides deep historical insights, guides character design, and contributes to music and AI integration.</p>
+                <div class="icons-container">
+                    <a href="https://www.linkedin.com/in/prem-e-5a83b5347" class="icon" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            
+            <div id="experience7" class="section-content">
+                <h3 class="title">Experience</h3>
+                <p class="text">Prem's expertise includes:</p>
+                <ul style="color: #000000;">
+                    <li><strong>Research Lead at Project-K:</strong> Conducts in-depth research on Kumari Kandam’s history, architecture, and culture.</li>
+                    <li><strong>Scriptwriter at Project-K:</strong> Crafts compelling scripts and dialogues based on historical accuracy.</li>
+                    <li><strong>Music & AI Consultant:</strong> Composes background scores and explores AI applications in sound design.</li>
+                </ul>
+            </div>
+
+          
+            <div id="contact7" class="section-content">
+                <h3 class="title">Contact</h3>
+                <p class="text">You can contact Prem through:</p>
+                <p class="text">Email: dineshprem3512@gmail.com</p>
+                <p class="text">LinkedIn: <a href="https://www.linkedin.com/in/prem-e-5a83b5347" target="_blank">linkedin.com/in/prem</a></p>
+            </div>
+
+            <div class="buttons-wrap">
+                <div class="button-wrap">
+                    <button class="button" data-target="about7">About</button>
+                </div>
+                <div class="button-wrap">
+                    <button class="button" data-target="experience7">Experience</button>
+                </div>
+                <div class="button-wrap">
+                    <button class="button" data-target="contact7">Contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+   <!-- Card 4: Sriraam -->
+   <!--<div class="card" id="card5">
+   <div class="header">
+       <div class="ham-menu">
+           <div class="center"></div>
+       </div>
+       <a href="mailto:sriraamprakash20@gmail.com" class="mail">
+           <i class="far fa-envelope"></i>
+       </a>
+       
+       <div class="main">
+           <div class="image" style="background-image: url('j.jpeg');">
+               <div class="hover">
+                   <i class="fas fa-camera fa-2x"></i>
+               </div>
+           </div>
+           <h3 class="name">Sriraam J</h3>
+           <h3 class="sub-name">Backend Developer</h3>
+       </div>
+   </div>
+ <div class="content">
+       <div class="left">
+           <div id="about5" class="section-content active">
+               <h3 class="title">About</h3>
+               <p class="text">A skilled developer focused on enhancing user experience throu xgh intuitive design and functionality. Sriraam's contributions help ensure seamless interactions within the FUTECX project.</p>
+
+               <div class="icons-container">
+                  
+                   <a href="https://www.linkedin.com/in/sriraam-jayaprakash-013017309?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="icon" target="_blank">
+                       <i class="fab fa-linkedin-in"></i>
+                   </a>
+
+                   <a href="https://x.com/sriraam_j48271?t=dLegrpudLIeZoeEui2yitw&s=09" class="icon" target="_blank">
+                       <i class="fab fa-x"></i>
+                   </a>
+               </div>
+           </div>
+           <div id="experience5" class="section-content">
+               <h3 class="title">Experience</h3>
+               <p class="text">Sriraam's professional experience includes:</p>
+               <ul style="color: #000000;">
+                   <li><strong>Developer at FUTECX:</strong> Developed and maintained systems for the FUTECX platform, focusing on API development and database management.</li>
+                   <li><strong>Software Developer at DevSolutions:</strong> Worked on web development projects and integrating with frontend applications.</li>
+                   <li><strong>Intern at WebWorks:</strong> Assisted in design and development tasks, gaining hands-on experience with various technologies and frameworks.</li>
+               </ul>
+           </div>
+           <div id="contact5" class="section-content">
+               <h3 class="title">Contact</h3>
+               <p class="text">To get in touch with Sriraam, use the following details:</p>
+               
+               <p class="text">LinkedIn: <a href="https://www.linkedin.com/in/sriraam-jayaprakash-013017309?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text">linkedin.com/in/sriraam</a></p>
+           </div>
+           <div class="buttons-wrap">
+               <div class="button-wrap">
+                   <button class="button" data-target="about5">About</button>
+               </div>
+               <div class="button-wrap">
+                   <button class="button" data-target="experience5">Experience</button>
+               </div>
+               <div class="button-wrap">
+                   <button class="button" data-target="contact5">Contact</button>
+               </div>
+           </div>
+       </div>
+   </div> 
+
+
+
+   
+
+  </div>
+  </div> -->
+</section>
+
+
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-aos="fade-up" data-aos-duration="1500">
+    <!-- Footer content here -->
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Quick Links</h4>
+                <a class="btn btn-link" href="#">About TN-FUTECX</a>
+                <a class="btn btn-link" href="contact.html">Contact Us</a>
+                <a class="btn btn-link" href="#">Privacy Policy</a>
+                <a class="btn btn-link" href="#">Terms & Conditions</a>
+                <a class="btn btn-link" href="#">FAQs & Help</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Contact</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>143 Tn-Future Tech Park, Thanjavur, India</p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9876543210</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>younginnovator2024@gmail.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href="https://x.com/RAshwin2k?t=iTYdkOAasJn998jp7lrktw&s=09"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://g.dev/AshwinRamakrishnan"><i class="fab fa-google"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://github.com/AshwinRamakrishnan"><i class="fab fa-github"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/ashwin-ramakrishnan-b328a6298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Gallery</h4>
+                <div class="row g-2 pt-2">
+                    <div class="col-4">
+                        <img class="img-fluid bg-light p-1" src="footerimg/group.jpeg" alt="Project 1">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light p-1" src="hy.jpeg" alt="Project 2">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light p-1" src="hack.jpeg" alt="Project 3">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light p-1" src="ttt.jpeg" alt="Project 4">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light p-1" src="king.jpeg" alt="Project 5">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid bg-light p-1" src="nlp.jpeg" alt="Project 6">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="text-white mb-3">Newsletter</h4>
+                <p>Stay updated with the latest from TN-FUTECX. Subscribe to our newsletter.</p>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" />
+                    <button id="subscribe-btn" type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+                      Subscribe
+                    </button>
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">TN-FUTECX</a>, All Rights Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-menu">
+                        <a href="#">Home</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">Help</a>
+                        <a href="#">FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function setupCard(cardId) {
+        const card = document.getElementById(cardId);
+        const buttons = card.querySelectorAll('.button');
+        const sections = card.querySelectorAll('.section-content');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                const targetId = this.getAttribute('data-target');
+
+                // Hide all sections
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // Show the selected section
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+            });
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        setupCard('card1');
+        setupCard('card2');
+        setupCard('card3');
+        setupCard('card4');
+        setupCard('card6');
+       
+         // Add this line to initialize card5
+    });  // JavaScript for handling tab switching within the cards
+</script>
+
+
+
+<script type="module" src="main.js"></script>
+
+    
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+
+
+
+
+
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const popup = document.getElementById("loginPopup");
+        const loginPopupBtn = document.getElementById("loginNow");
+        const authSection = document.getElementById("authSection");
+      
+        // Login check
+        const user = localStorage.getItem("loggedInUser");
+      
+        // Navbar update
+        if (user) {
+          authSection.innerHTML = `
+            <div class="dropdown">
+              <button class="btn btn-blur dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                👤 ${user.split("@")[0]}
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="userMenu">
+                <li><span class="dropdown-item-text">${user}</span></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
+              </ul>
+            </div>
+          `;
+          document.getElementById("logoutBtn").addEventListener("click", () => {
+            localStorage.removeItem("loggedInUser");
+            alert("You have logged out successfully!");
+            window.location.reload();
+          });
+        } else {
+          authSection.innerHTML = `<button id="loginBtn" class="btn btn-blur">Login</button>`;
+          document.getElementById("loginBtn").addEventListener("click", () => {
+            window.location.href = "login.html";
+          });
+        }
+      
+        // Show popup after 30 sec if not logged in
+        if (!user) {
+          setTimeout(() => {
+            popup.style.display = "flex";
+          }, 30000); // 30 seconds
+        }
+      
+        // Redirect when click login now
+        loginPopupBtn.addEventListener("click", () => {
+          window.location.href = "login.html";
+        });
+      });
+
+</script>
+
+</body>
+</html>
+
+

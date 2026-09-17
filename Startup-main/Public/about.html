@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page Title (SEO Optimized) -->
+  <title>FUTECX — About Us | TN-FUTECX</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/public/FUTECX.ico" type="image/x-icon" />
+
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="Learn about FUTECX — the innovative team behind TN-FUTECX. Discover our mission, vision, and commitment to technology and innovation." />
+
+  <!-- Meta Keywords -->
+  <meta name="keywords" content="FUTECX, TN-FUTECX, FUTECX About, FUTECX Team, Technology Innovation, FUTECX Mission, FUTECX Vision" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="FUTECX — About Us | TN-FUTECX" />
+  <meta property="og:description" content="Discover FUTECX, the team driving innovation and technology at TN-FUTECX. Learn about our mission, vision, and projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tn-futecx.web.app/about" />
+  <meta property="og:image" content="https://tn-futecx.web.app/public/FUTECX.ico" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FUTECX — About Us | TN-FUTECX" />
+  <meta name="twitter:description" content="Discover FUTECX, the team driving innovation and technology at TN-FUTECX. Learn about our mission, vision, and projects." />
+  <meta name="twitter:image" content="https://tn-futecx.web.app/public/FUTECX.ico" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <script type="module" src="/js/email.js"></script>
+  
+
+
+  <style>
+    :root {
+      --brand: #2979ff;      
+      --ink: #0f172a;        
+      --muted: #64748b;      
+      --surface: #0b1220;    
+      --glass: rgba(255, 255, 255, 0.75);
+      --radius: 1.25rem;     
+      --shadow: 0 10px 30px rgba(2, 6, 23, 0.15);
+    }
+
+    * { box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: var(--ink); }
+    a { text-decoration: none; }
+
+    /* Navbar */
+    .navbar { backdrop-filter: saturate(140%) blur(8px); }
+    .nav-glass {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      padding: .35rem .75rem;
+    }
+    .btn-blur {
+      background: var(--glass);
+      border: none;
+      color: var(--brand);
+      border-radius: 999px;
+      padding: .6rem 1rem;
+      transition: all .25s ease;
+    }
+    .btn-blur:hover { background: #fff; box-shadow: var(--shadow); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #fff;
+      overflow: clip;
+    }
+    .hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: url('A.jpeg') center/cover no-repeat;
+      filter: brightness(70%);
+      z-index: -2;
+    }
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(11,18,32,.65), rgba(11,18,32,.35) 45%, rgba(11,18,32,.75));
+      z-index: -1;
+    }
+    .hero .badge {
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 999px;
+      color: #fff;
+      backdrop-filter: blur(6px);
+    }
+
+    /* Section base */
+    section { padding: 72px 0; }
+    .section-title { color: var(--brand); font-weight: 800; letter-spacing: .3px; }
+    .section-sub { color: var(--muted); }
+
+    /* About Overview */
+    .about-card {
+      background: #fff; border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 32px; height: 100%;
+    }
+    .about-img { border-radius: var(--radius); box-shadow: var(--shadow); }
+
+    /* Feature Chips */
+    .chip { border: 1px dashed rgba(41,121,255,.5); color: var(--brand); border-radius: 999px; padding: .5rem .9rem; font-weight: 600; }
+
+    /* Metric cards */
+    .kpi {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid #eef4ff; border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 24px; height: 100%; text-align: center;
+    }
+    .kpi h3 { font-weight: 800; font-size: 2rem; margin: 0; color: var(--brand); }
+    .kpi p { margin: 0; color: var(--muted); }
+
+    /* Timeline */
+    .timeline { position: relative; }
+    .timeline::before { content: ""; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: #e2e8f0; }
+    .tl-item { position: relative; padding-left: 64px; padding-bottom: 28px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot { position: absolute; left: 12px; width: 18px; height: 18px; border-radius: 50%; background: #fff; border: 3px solid var(--brand); }
+
+    /* Values */
+    .value-card { border-radius: var(--radius); border: 1px solid #eef2f7; padding: 24px; height: 100%; background: #fff; box-shadow: var(--shadow); }
+
+    /* Leadership */
+    .leader { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; height: 100%; }
+    .leader img { width: 100%; height: 220px; object-fit: cover; }
+
+    /* CTA */
+    .cta { background: linear-gradient(135deg, #1e293b, #0b1220); color: #fff; border-radius: calc(var(--radius) + 8px); box-shadow: var(--shadow); overflow: hidden; }
+    .cta .btn-light { border-radius: 999px; }
+
+    /* Footer tweaks */
+    .footer h4, .footer p { color: #fff; }
+
+    /* Back to top */
+    .back-to-top { position: fixed; bottom: 20px; right: 20px; z-index: 999; }
+
+    @media (max-width: 991px){
+      .hero { min-height: 56vh; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top py-3 bg-white bg-opacity-75 border-bottom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="lo.jpeg" alt="TN-FUTECX Logo" style="width:150px;height:auto;" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav mx-auto nav-glass">
+          <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3 active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="service.html">Our Expertise</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="team.html">Team</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="ms-lg-3 mt-3 mt-lg-0" id="authSection">
+          <!-- Initially shows login -->
+          <button id="loginBtn" class="btn btn-blur">Login</button>
+        </div>
+        
+      </div>
+    </div>
+  </nav>
+
+
+<!-- TN-FUTECX Custom Login Popup -->
+<div id="loginPopup" class="popup-overlay">
+  <div class="popup-box">
+    <h2>⚠️ Login Required</h2>
+    <p>To continue exploring <strong>TN-FUTECX</strong>, please login to your account.</p>
+    <div class="popup-actions">
+      <button id="loginNow" class="btn btn-primary">Login Now</button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* === TN-FUTECX Popup Design === */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.popup-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  padding: 30px 40px;
+  width: 350px;
+  animation: popupSlide 0.4s ease-in-out;
+}
+
+.popup-box h2 {
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.popup-box p {
+  color: #333;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.popup-actions .btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popupSlide {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+</style>
+
+
+
+
+
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container position-relative" data-aos="fade-up" data-aos-duration="900">
+      <span class="badge px-3 py-2 mb-3"><i class="fa-solid fa-bolt me-2"></i> Innovate • Build • Impact</span>
+      <h1 class="display-5 fw-bold mb-3">About <span class="text-info">TN‑FUTECX</span></h1>
+      <p class="lead mb-0">We are a student‑led, industry‑aligned tech collective from Tamil Nadu—turning AI/ML/NLP research into real products, communities, and careers.</p>
+    </div>
+  </header>
+
+  <!-- ABOUT OVERVIEW -->
+  <section>
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <img src="AI.jpg" alt="About FUTECX" class="img-fluid about-img" />
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="about-card">
+            <h2 class="section-title h3 mb-3">Who We Are</h2>
+            <p class="mb-3">TN‑FUTECX is a growing network of builders—students, mentors, and industry friends—collaborating to ship projects that matter. From hackathon MVPs to deploy‑ready apps, we pair rapid prototyping with responsible engineering.</p>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="chip me-2 mb-2"><i class="fa-solid fa-robot me-2"></i>AI/ML/NLP</span>
+              <span class="chip me-2 mb-2"><i class="fa-solid fa-cloud me-2"></i>Cloud & DevOps</span>
+              <span class="chip me-2 mb-2"><i class="fa-solid fa-shield-halved me-2"></i>Security First</span>
+              <span class="chip me-2 mb-2"><i class="fa-solid fa-people-group me-2"></i>Community</span>
+            </div>
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="d-flex align-items-start">
+                  <i class="fa-solid fa-flag-checkered text-primary fs-4 me-3"></i>
+                  <div>
+                    <h6 class="mb-1">Mission</h6>
+                    <p class="mb-0 text-secondary">Advance practical tech skills, ship products, and uplift our peers.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-flex align-items-start">
+                  <i class="fa-solid fa-earth-asia text-primary fs-4 me-3"></i>
+                  <div>
+                    <h6 class="mb-1">Vision</h6>
+                    <p class="mb-0 text-secondary">Build a maker culture in TN that competes globally.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPIs -->
+  <section class="bg-light">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-lg-3" data-aos="zoom-in"><div class="kpi"><h3 data-count="24">0</h3><p>Projects Delivered</p></div></div>
+        <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="50"><div class="kpi"><h3 data-count="6">0</h3><p>Core Team</p></div></div>
+        <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100"><div class="kpi"><h3 data-count="1200">0</h3><p>Students Reached</p></div></div>
+        <div class="col-6 col-lg-3" data-aos="zoom-in" data-aos-delay="150"><div class="kpi"><h3 data-count="15">0</h3><p>Workshops & Talks</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section>
+    <div class="container">
+      <div class="row mb-4"><div class="col text-center">
+        <h2 class="section-title h3">What We Do</h2>
+        <p class="section-sub">Hands‑on building, teaching, and community programs.</p>
+      </div></div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3" data-aos="fade-up"><div class="value-card h-100">
+          <i class="fa-solid fa-screwdriver-wrench fs-3 text-primary mb-3"></i>
+          <h6 class="fw-bold">Build Projects</h6>
+          <p class="mb-0 text-secondary">Ship MVPs to production with local partners and real users.</p>
+        </div></div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="75"><div class="value-card h-100">
+          <i class="fa-solid fa-users fs-3 text-primary mb-3"></i>
+          <h6 class="fw-bold">Community Learning</h6>
+          <p class="mb-0 text-secondary">Mentorship, study jams, and in‑person meetups that scale skills.</p>
+        </div></div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150"><div class="value-card h-100">
+          <i class="fa-solid fa-network-wired fs-3 text-primary mb-3"></i>
+          <h6 class="fw-bold">Network Growth</h6>
+          <p class="mb-0 text-secondary">Connect with student leaders, organizers, experts, and alumni.</p>
+        </div></div>
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="225"><div class="value-card h-100">
+          <i class="fa-solid fa-briefcase fs-3 text-primary mb-3"></i>
+          <h6 class="fw-bold">Professional Growth</h6>
+          <p class="mb-0 text-secondary">Career prep, portfolio reviews, and invites to select events.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING PROJECTS -->
+  <section class="bg-light">
+    <div class="container">
+      <div class="row mb-4 text-center">
+        <div class="col">
+          <h2 class="section-title h3">Upcoming Projects</h2>
+          <p class="section-sub">Exciting initiatives coming soon from TN‑FUTECX.</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="value-card h-100">
+            <i class="fa-solid fa-film fs-3 text-primary mb-3"></i>
+            <h6 class="fw-bold">Kumari Kandam Yazhi – Full-Length Movie</h6>
+            <p class="mb-0 text-secondary">A cinematic journey depicting the legend of Kumari Kandam, slated for production from 2027–2030.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="75">
+          <div class="value-card h-100">
+            <i class="fa-solid fa-robot fs-3 text-primary mb-3"></i>
+            <h6 class="fw-bold">EMOSYN AI</h6>
+            <p class="mb-0 text-secondary">An advanced AI framework to understand and simulate human emotional intelligence in tech applications.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+          <div class="value-card h-100">
+            <i class="fa-solid fa-brain fs-3 text-primary mb-3"></i>
+            <h6 class="fw-bold">FUTECX AI</h6>
+            <p class="mb-0 text-secondary">Next-generation AI platform integrating research and community insights to build impactful solutions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="bg-light">
+    <div class="container">
+      <div class="row mb-4"><div class="col text-center">
+        <h2 class="section-title h3">Our Journey</h2>
+        <p class="section-sub">Key milestones that shaped TN‑FUTECX.</p>
+      </div></div>
+      <div class="timeline">
+        <div class="tl-item" data-aos="fade-right">
+          <span class="tl-dot"></span>
+          <h6 class="fw-bold mb-1">2023 — Spark</h6>
+          <p class="text-secondary mb-0">Founded by student builders with a shared vision to learn by shipping.</p>
+        </div>
+        <div class="tl-item" data-aos="fade-right" data-aos-delay="100">
+          <span class="tl-dot"></span>
+          <h6 class="fw-bold mb-1">2024 — Momentum</h6>
+          <p class="text-secondary mb-0">Multiple hackathon wins, public demos, and community workshops.</p>
+        </div>
+        <div class="tl-item" data-aos="fade-right" data-aos-delay="200">
+          <span class="tl-dot"></span>
+          <h6 class="fw-bold mb-1">2025 — Scale</h6>
+          <p class="text-secondary mb-0">Launching v3 projects, expanding partnerships, and mentoring cohorts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP & VALUES ROW -->
+  <section>
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-7" data-aos="fade-up">
+          <h2 class="section-title h3 mb-3">Leadership</h2>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="leader">
+                <img src="Ashwin.jpg" alt="Leader 1" />
+                <div class="p-3">
+                  <h6 class="mb-1">Ashwin Ramakrishnan</h6>
+                  <p class="text-secondary small mb-2">Project Lead • Full‑Stack • Educator</p>
+                  <div class="d-flex gap-2">
+                    <a href="https://github.com/AshwinRamakrishnan" class="text-dark me-3"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ashwin-ramakrishnan-b328a6298" class="text-dark me-3"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://g.dev/AshwinRamakrishnan" class="text-dark"><i class="fa-brands fa-google"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="leader">
+                <img src="ml.jpeg" alt="Leader 2" />
+                <div class="p-3">
+                  <h6 class="mb-1">Young Innovators</h6>
+                  <p class="text-secondary small mb-2">Core Team • AI/ML • Community</p>
+                  <div class="d-flex gap-2">
+                    <a href="#" class="text-dark me-3"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="text-dark me-3"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#" class="text-dark"><i class="fa-solid fa-globe"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+          <h2 class="section-title h3 mb-3">Our Values</h2>
+          <div class="row g-3">
+            <div class="col-12"><div class="value-card"><i class="fa-solid fa-cubes-stacked text-primary me-2"></i> Ship small, learn fast.</div></div>
+            <div class="col-12"><div class="value-card"><i class="fa-solid fa-scale-balanced text-primary me-2"></i> Build responsibly and ethically.</div></div>
+            <div class="col-12"><div class="value-card"><i class="fa-solid fa-handshake-angle text-primary me-2"></i> Uplift peers—community over clout.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK / GALLERY ROW -->
+  <section class="bg-light">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h2 class="section-title h3 mb-3">Focus Areas</h2>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge text-bg-light border"><i class="fa-solid fa-brain me-2"></i>Gen‑AI & LLMs</span>
+            <span class="badge text-bg-light border"><i class="fa-solid fa-language me-2"></i>NLP</span>
+            <span class="badge text-bg-light border"><i class="fa-solid fa-chart-line me-2"></i>MLOps</span>
+            <span class="badge text-bg-light border"><i class="fa-solid fa-database me-2"></i>Data Engineering</span>
+            <span class="badge text-bg-light border"><i class="fa-solid fa-cloud-arrow-up me-2"></i>Cloud</span>
+            <span class="badge text-bg-light border"><i class="fa-solid fa-lock me-2"></i>Security</span>
+            <span class="badge text-bg-light border"><i class="fa-solid fa-vr-cardboard me-2"></i>3D/Graphics</span>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="row g-2">
+            <div class="col-4"><img class="img-fluid bg-white p-1 rounded" src="LLM.jpg" alt="LLMs" /></div>
+            <div class="col-4"><img class="img-fluid bg-white p-1 rounded" src="DATA.jpg" alt="ML" /></div>
+            <div class="col-4"><img class="img-fluid bg-white p-1 rounded" src="FAI.jpg" alt="AI" /></div>
+            <div class="col-4"><img class="img-fluid bg-white p-1 rounded" src="NET.jpg" alt="NLP" /></div>
+            <div class="col-4"><img class="img-fluid bg-white p-1 rounded" src="SE.jpg" alt="Project" /></div>
+            <div class="col-4"><img class="img-fluid bg-white p-1 rounded" src="CHIP.jpg" alt="NLP" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-0">
+    <div class="container">
+      <div class="cta p-4 p-md-5" data-aos="zoom-in">
+        <div class="row align-items-center g-3">
+          <div class="col-lg-8">
+            <h3 class="fw-bold mb-1">Ready to build with us?</h3>
+            <p class="mb-0 text-white-50">Join TN‑FUTECX as a contributor, partner, or mentor. Let’s turn ideas into impact.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="contact.html" class="btn btn-light btn-lg me-2 mb-2"><i class="fa-solid fa-envelope me-2"></i>Contact</a>
+            <a href="team.html" class="btn btn-outline-light btn-lg mb-2"><i class="fa-solid fa-users-line me-2"></i>Meet the Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="container-fluid bg-dark text-light footer pt-5 mt-5" data-aos="fade-up" data-aos-duration="1500">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Quick Links</h4>
+          <a class="btn btn-link text-decoration-none" href="#">About TN‑FUTECX</a>
+          <a class="btn btn-link text-decoration-none" href="contact.html">Contact Us</a>
+          <a class="btn btn-link text-decoration-none" href="#">Privacy Policy</a>
+          <a class="btn btn-link text-decoration-none" href="#">Terms & Conditions</a>
+          <a class="btn btn-link text-decoration-none" href="#">FAQs & Help</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Contact</h4>
+          <p class="mb-2"><i class="fa fa-map-marker-alt me-2"></i>143 TN‑Future Tech Park, Thanjavur, India</p>
+          <p class="mb-2"><i class="fa fa-phone-alt me-2"></i>+91 9876543210</p>
+          <p class="mb-2"><i class="fa fa-envelope me-2"></i>younginnovator2024@gmail.com</p>
+          <div class="d-flex pt-2 gap-2">
+            <a class="btn btn-outline-light btn-sm" href="https://x.com/RAshwin2k"><i class="fab fa-x-twitter"></i></a>
+            <a class="btn btn-outline-light btn-sm" href="https://g.dev/AshwinRamakrishnan"><i class="fab fa-google"></i></a>
+            <a class="btn btn-outline-light btn-sm" href="https://github.com/AshwinRamakrishnan"><i class="fab fa-github"></i></a>
+            <a class="btn btn-outline-light btn-sm" href="https://www.linkedin.com/in/ashwin-ramakrishnan-b328a6298"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Gallery</h4>
+          <div class="row g-2 pt-2">
+            <div class="col-4"><img class="img-fluid bg-light p-1 rounded" src="AII.jpeg" alt="Project 1" /></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1 rounded" src="ml.jpeg" alt="Project 2" /></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1 rounded" src="ai.jpeg" alt="Project 3" /></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1 rounded" src="Meeravathi.jpeg" alt="Project 4" /></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1 rounded" src="king.jpeg" alt="Project 5" /></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1 rounded" src="nlp.jpeg" alt="Project 6" /></div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Newsletter</h4>
+          <p>Stay updated with the latest from TN‑FUTECX. Subscribe to our newsletter.</p>
+          <div class="position-relative mx-auto" style="max-width: 400px;">
+            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" />
+            <button id="subscribe-btn" type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+              Subscribe
+            </button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="container border-top border-secondary-subtle pt-3 pb-4">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          &copy; <span class="border-bottom">TN‑FUTECX</span>, All Rights Reserved.
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <div class="d-flex justify-content-center justify-content-md-end gap-3">
+            <a href="#" class="link-light">Home</a>
+            <a href="#" class="link-light">Cookies</a>
+            <a href="#" class="link-light">Help</a>
+            <a href="#" class="link-light">FAQs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Counter animation for KPIs
+    function animateCounters(){
+      document.querySelectorAll('[data-count]').forEach(el => {
+        const target = +el.getAttribute('data-count');
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / 120));
+        const tick = () => {
+          current += step;
+          if(current >= target){ el.textContent = target.toLocaleString(); }
+          else { el.textContent = current.toLocaleString(); requestAnimationFrame(tick); }
+        };
+        requestAnimationFrame(tick);
+      });
+    }
+    window.addEventListener('load', animateCounters);
+
+    // Smooth scroll to top
+    document.querySelector('.back-to-top')?.addEventListener('click', (e)=>{
+      e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const popup = document.getElementById("loginPopup");
+      const loginPopupBtn = document.getElementById("loginNow");
+      const authSection = document.getElementById("authSection");
+    
+      // Login check
+      const user = localStorage.getItem("loggedInUser");
+    
+      // Navbar update
+      if (user) {
+        authSection.innerHTML = `
+          <div class="dropdown">
+            <button class="btn btn-blur dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+              👤 ${user.split("@")[0]}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="userMenu">
+              <li><span class="dropdown-item-text">${user}</span></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+          </div>
+        `;
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+          localStorage.removeItem("loggedInUser");
+          alert("You have logged out successfully!");
+          window.location.reload();
+        });
+      } else {
+        authSection.innerHTML = `<button id="loginBtn" class="btn btn-blur">Login</button>`;
+        document.getElementById("loginBtn").addEventListener("click", () => {
+          window.location.href = "login.html";
+        });
+      }
+    
+      // Show popup after 30 sec if not logged in
+      if (!user) {
+        setTimeout(() => {
+          popup.style.display = "flex";
+        }, 30000); // 30 seconds
+      }
+    
+      // Redirect when click login now
+      loginPopupBtn.addEventListener("click", () => {
+        window.location.href = "login.html";
+      });
+    });
+  </script>
+</body>
+</html>

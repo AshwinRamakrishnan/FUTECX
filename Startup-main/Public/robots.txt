@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://tn-futecx.web.app/sitemap.xml

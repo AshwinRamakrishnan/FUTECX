@@ -1,0 +1,27 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      { "source": "/", "destination": "/index.html" },
+      { "source": "/about", "destination": "/about.html" },
+      { "source": "/service", "destination": "/service.html" },
+      { "source": "/team", "destination": "/team.html" },
+      { "source": "/login", "destination": "/login.html" },
+      { "source": "/contact", "destination": "/contact.html" }
+    ],
+    "redirects": [
+      {
+        "source": "/bujji",
+        "destination": "https://bujji-dreamroute.vercel.app/",
+        "type": 301
+      }
+    ],
+    "headers": [
+      {
+        "source": "/sitemap.xml",
+        "headers": [{ "key": "Content-Type", "value": "application/xml" }]
+      }
+    ]
+  }
+}

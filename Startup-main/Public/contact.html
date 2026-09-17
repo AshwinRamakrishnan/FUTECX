@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FUTECX — Contact Us | TN-FUTECX</title>
+  <link rel="icon" href="/public/FUTECX.ico" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <script type="module" src="/js/email.js"></script>
+  
+  <style>
+    :root {
+      --brand: #2979ff;
+      --ink: #0f172a;
+      --muted: #64748b;
+      --bg: #f8fafc;
+      
+      --radius: 1rem;
+      --shadow: 0 10px 30px rgba(2,6,23,0.12);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--ink);
+      background-color: var(--bg);
+    }
+
+    /* Keep your Navbar and Hero as before */
+    .navbar { backdrop-filter: saturate(140%) blur(8px); }
+    .nav-glass { background: rgba(255, 255, 255, 0.7); border-radius: 999px; box-shadow: var(--shadow); padding: .35rem .75rem; }
+    .btn-blur { background: rgba(255,255,255,0.8); border: none; color: var(--brand); border-radius: 999px; padding: .6rem 1rem; transition: all .25s; }
+    .btn-blur:hover { background: #fff; box-shadow: var(--shadow); }
+
+    .hero {
+      position: relative;
+      min-height: 65vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('video.png') center/cover no-repeat;
+      filter: brightness(70%);
+      z-index: -2;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(11,18,32,.65), rgba(11,18,32,.4) 45%, rgba(11,18,32,.75));
+      z-index: -1;
+    }
+
+    /* ==== Contact Section v2 ==== */
+.contact-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.contact-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* ==== Left Side: Company Info ==== */
+.contact-info {
+  background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc);
+  color: #fff;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-info h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-info p:hover {
+  transform: translateX(4px);
+  opacity: 0.9;
+}
+
+.contact-info i {
+  font-size: 1.2rem;
+  width: 28px;
+  text-align: center;
+}
+
+/* ==== Right Side: Contact Form ==== */
+.contact-form {
+  padding: 60px 50px;
+  background: #fff;
+}
+
+.contact-form h4 {
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 25px;
+  font-size: 1.4rem;
+}
+
+.form-control {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #d0d7de;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: #2979ff;
+  box-shadow: 0 0 5px rgba(41, 121, 255, 0.3);
+  outline: none;
+}
+
+.contact-form button {
+  background: linear-gradient(135deg, #2979ff, #00c6ff);
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px 25px;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(135deg, #1e54b8, #0099ff);
+  transform: translateY(-2px);
+}
+
+/* ==== Responsive Design ==== */
+@media (max-width: 991px) {
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+  .contact-info, .contact-form {
+    padding: 40px 30px;
+  }
+  .contact-info h3, .contact-form h4 {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.4s ease-in-out;
+  z-index: 9999;
+}
+
+/* Popup Box */
+.popup-box {
+  background: #ffffffdd;
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transform: scale(0.9);
+  animation: popupIn 0.4s forwards;
+}
+
+/* Header */
+.popup-header h2 {
+  color: #0044ff;
+  font-weight: 700;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.popup-header p {
+  color: #444;
+  font-size: 15px;
+}
+
+/* Buttons */
+.popup-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #0044ff, #00aaff);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #0044ff;
+  border: 2px solid #0044ff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #0044ff;
+  color: white;
+}
+
+/* Animations */
+@keyframes popupIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR (unchanged) -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top py-2 bg-white bg-opacity-75 border-bottom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="lo.jpeg" alt="TN-FUTECX Logo" style="width:140px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav mx-auto nav-glass">
+          <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="service.html">Our Expertise</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="team.html">Team</a></li>
+          <li class="nav-item"><a class="nav-link px-3 active" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="ms-lg-3 mt-3 mt-lg-0" id="authSection">
+          <!-- Initially shows login -->
+          <button id="loginBtn" class="btn btn-blur">Login</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<!-- TN-FUTECX Custom Login Popup -->
+<div id="loginPopup" class="popup-overlay">
+  <div class="popup-box">
+    <h2>⚠️ Login Required</h2>
+    <p>To continue exploring <strong>TN-FUTECX</strong>, please login to your account.</p>
+    <div class="popup-actions">
+      <button id="loginNow" class="btn btn-primary">Login Now</button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* === TN-FUTECX Popup Design === */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.popup-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  padding: 30px 40px;
+  width: 350px;
+  animation: popupSlide 0.4s ease-in-out;
+}
+
+.popup-box h2 {
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.popup-box p {
+  color: #333;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.popup-actions .btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popupSlide {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+</style>
+
+
+
+  <!-- HERO (unchanged) -->
+  <header class="hero">
+    <div class="container position-relative" data-aos="fade-up">
+      <h1 class="fw-bold mb-2" style="font-size:2rem;">Get in Touch with <span class="text-info">TN-FUTECX</span></h1>
+      <p class="lead mb-0" style="font-size:0.95rem;">We’re here to answer your questions or collaborate on innovative ideas.</p>
+    </div>
+  </header>
+
+  <!-- 📞 CONTACT SECTION -->
+  <section class="contact-section">
+    
+    <div class="container">
+      <div class="contact-box">
+        <!-- Left: Info -->
+        <div class="contact-info" data-aos="fade-left" data-aos-duration="1000">
+          <h3>Company Information</h3>
+          <p><i class="fa fa-building"></i> <strong>FUTECX Technologies Pvt Ltd</strong></p>
+          <p><i class="fa fa-map-marker-alt"></i> 143 TN-Future Tech Park,<br> Thanjavur, Tamil Nadu, India</p>
+          <p><i class="fa fa-envelope"></i><a href="mailto:tnfutecx@gmail.com"  class="contact-link"  style="color:#fff; text-decoration:none;" >tnfutecx@gmail.com</a></p>
+          <p> <i class="fab fa-whatsapp whatsapp-icon"></i> <a href="https://wa.me/91XXXXXXXXXX" target="_blank" style="color:#fff; text-decoration:none;">WhatsApp</a></p>
+        
+          <hr class="border-light">
+        
+          <p><i class="fa fa-clock"></i> Mon – Sat: 9:00 AM – 7:00 PM</p>
+        
+          <!-- ✅ Clickable Website -->
+          <p>
+           
+            <p><i class="fa fa-globe"></i> <a href="https://tn-futecx.web.app" target="_blank" style="color:#fff; text-decoration:none;">tn-futecx.web.app</a></p>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact-form" data-aos="fade-right" data-aos-duration="1000">
+          <h4>Send Us a Message</h4>
+          <form id="contactForm">
+            <input type="text" id="name" class="form-control" placeholder="Your Name" required />
+            <input type="email" id="email" class="form-control" placeholder="Your Email" required />
+            <input type="text" id="subject" class="form-control" placeholder="Subject" required />
+            <textarea id="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (unchanged) -->
+ <!-- FOOTER -->
+ <div class="container-fluid bg-dark text-light footer pt-5 mt-5" data-aos="fade-up" data-aos-duration="1500">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6">
+        <h4 class="text-white mb-3">Quick Links</h4>
+        <a class="btn btn-link text-decoration-none" href="#">About TN‑FUTECX</a>
+        <a class="btn btn-link text-decoration-none" href="contact.html">Contact Us</a>
+        <a class="btn btn-link text-decoration-none" href="#">Privacy Policy</a>
+        <a class="btn btn-link text-decoration-none" href="#">Terms & Conditions</a>
+        <a class="btn btn-link text-decoration-none" href="#">FAQs & Help</a>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h4 class="text-white mb-3">Contact</h4>
+        <p class="mb-2"><i class="fa fa-map-marker-alt me-2"></i>143 TN‑Future Tech Park, Thanjavur, India</p>
+        <p class="mb-2"><i class="fa fa-phone-alt me-2"></i>+91 9876543210</p>
+        <p class="mb-2"><i class="fa fa-envelope me-2"></i>younginnovator2024@gmail.com</p>
+        <div class="d-flex pt-2 gap-2">
+          <a class="btn btn-outline-light btn-sm" href="https://x.com/RAshwin2k"><i class="fab fa-x-twitter"></i></a>
+          <a class="btn btn-outline-light btn-sm" href="https://g.dev/AshwinRamakrishnan"><i class="fab fa-google"></i></a>
+          <a class="btn btn-outline-light btn-sm" href="https://github.com/AshwinRamakrishnan"><i class="fab fa-github"></i></a>
+          <a class="btn btn-outline-light btn-sm" href="https://www.linkedin.com/in/ashwin-ramakrishnan-b328a6298"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h4 class="text-white mb-3">Gallery</h4>
+        <div class="row g-2 pt-2">
+          <div class="col-4"><img class="img-fluid bg-light p-1 rounded" src="AII.jpeg" alt="Project 1" /></div>
+          <div class="col-4"><img class="img-fluid bg-light p-1 rounded" src="ml.jpeg" alt="Project 2" /></div>
+          <div class="col-4"><img class="img-fluid bg-light p-1 rounded" src="ai.jpeg" alt="Project 3" /></div>
+          <div class="col-4"><img class="img-fluid bg-light p-1 rounded" src="Meeravathi.jpeg" alt="Project 4" /></div>
+          <div class="col-4"><img class="img-fluid bg-light p-1 rounded" src="king.jpeg" alt="Project 5" /></div>
+          <div class="col-4"><img class="img-fluid bg-light p-1 rounded" src="nlp.jpeg" alt="Project 6" /></div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h4 class="text-white mb-3">Newsletter</h4>
+        <p>Stay updated with the latest from TN‑FUTECX. Subscribe to our newsletter.</p>
+        <div class="position-relative mx-auto" style="max-width: 400px;">
+          <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" />
+          <button id="subscribe-btn" type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+            Subscribe
+          </button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="container border-top border-secondary-subtle pt-3 pb-4">
+    <div class="row">
+      <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+        &copy; <span class="border-bottom">TN‑FUTECX</span>, All Rights Reserved.
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <div class="d-flex justify-content-center justify-content-md-end gap-3">
+          <a href="#" class="link-light">Home</a>
+          <a href="#" class="link-light">Cookies</a>
+          <a href="#" class="link-light">Help</a>
+          <a href="#" class="link-light">FAQs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDMj45IV8LXuOArD2DgtwvfB841dzcn620",
+      authDomain: "tn-futecx.firebaseapp.com",
+      projectId: "tn-futecx",
+      storageBucket: "tn-futecx.firebasestorage.app",
+      messagingSenderId: "884450104101",
+      appId: "1:884450104101:web:eae68a54cdee6078f300cc",
+      measurementId: "G-TNYE4ZSD3C"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      try {
+        await addDoc(collection(db, "contactMessages"), {
+          name, email, subject, message, timestamp: serverTimestamp(),
+        });
+        alert("✅ Message sent successfully!");
+        e.target.reset();
+      } catch (error) {
+        alert("❌ Failed to send message. Try again.");
+      }
+    });
+
+
+
+
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const popup = document.getElementById("loginPopup");
+        const loginPopupBtn = document.getElementById("loginNow");
+        const authSection = document.getElementById("authSection");
+      
+        // Login check
+        const user = localStorage.getItem("loggedInUser");
+      
+        // Navbar update
+        if (user) {
+          authSection.innerHTML = `
+            <div class="dropdown">
+              <button class="btn btn-blur dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                👤 ${user.split("@")[0]}
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="userMenu">
+                <li><span class="dropdown-item-text">${user}</span></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
+              </ul>
+            </div>
+          `;
+          document.getElementById("logoutBtn").addEventListener("click", () => {
+            localStorage.removeItem("loggedInUser");
+            alert("You have logged out successfully!");
+            window.location.reload();
+          });
+        } else {
+          authSection.innerHTML = `<button id="loginBtn" class="btn btn-blur">Login</button>`;
+          document.getElementById("loginBtn").addEventListener("click", () => {
+            window.location.href = "login.html";
+          });
+        }
+      
+        // Show popup after 30 sec if not logged in
+        if (!user) {
+          setTimeout(() => {
+            popup.style.display = "flex";
+          }, 30000); // 30 seconds
+        }
+      
+        // Redirect when click login now
+        loginPopupBtn.addEventListener("click", () => {
+          window.location.href = "login.html";
+        });
+      });
+      </script>
+      
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>

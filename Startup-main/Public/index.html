@@ -1,0 +1,746 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+      <!-- Page Title (SEO Optimized) -->
+      <title>Home — TN-FUTECX | Innovating Future Tech</title>
+    
+      <!-- Favicon -->
+      <link rel="icon" href="FUTECX.ico" type="image/x-icon" />
+    
+      <!-- Meta Description for SEO -->
+      <meta name="description" content="Welcome to TN-FUTECX — Explore our AI-driven projects, expert services, and the FUTECX mission to transform the future with intelligent technology." />
+    
+      <!-- Meta Keywords -->
+      <meta name="keywords" content="FUTECX, TN-FUTECX, FUTECX Technology, AI Projects, Cloud Solutions, Smart Tech, FUTECX Team" />
+    
+      <!-- Robots -->
+      <meta name="robots" content="index, follow" />
+    
+      <!-- Open Graph / Social Media -->
+      <meta property="og:title" content="Home — TN-FUTECX | Innovating Future Tech" />
+      <meta property="og:description" content="Explore FUTECX’s innovations, expertise, and projects at TN-FUTECX. Discover how we’re shaping the future through technology and teamwork." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://tn-futecx.web.app/" />
+      <meta property="og:image" content="https://tn-futecx.web.app/FUTECX.ico" />
+    
+      <!-- Twitter Card -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Home — TN-FUTECX | Innovating Future Tech" />
+      <meta name="twitter:description" content="Discover FUTECX’s innovative AI and Cloud solutions shaping the future of smart technology." />
+      <meta name="twitter:image" content="https://tn-futecx.web.app/FUTECX.ico" />
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+      <script type="module" src="/js/email.js"></script>
+      
+      <!-- Structured Data -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "FUTECX",
+        "url": "https://tn-futecx.web.app",
+        "logo": "https://tn-futecx.web.app/FUTECX.ico",
+        "sameAs": [
+          "https://www.linkedin.com/company/futecx",
+          "https://twitter.com/futecx"
+        ],
+        "department": [
+          {
+            "@type": "WebPage",
+            "name": "About FUTECX",
+            "url": "https://tn-futecx.web.app/about"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Our Services",
+            "url": "https://tn-futecx.web.app/services"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Our Team",
+            "url": "https://tn-futecx.web.app/team"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Login",
+            "url": "https://tn-futecx.web.app/login"
+          }
+        ]
+      }
+      </script>
+    
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="home.css" />
+    
+      <!-- Google Font -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+      <!-- Bootstrap JS Bundle -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    
+  <style>
+    :root {
+      --brand: #2979ff;      
+      --ink: #0f172a;        
+      --muted: #64748b;      
+      --surface: #0b1220;    
+      --glass: rgba(255, 255, 255, 0.75);
+      --radius: 1.25rem;     
+      --shadow: 0 10px 30px rgba(2, 6, 23, 0.15);
+    }
+
+    * { box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: var(--ink); }
+    a { text-decoration: none; }
+
+    /* Navbar */
+    .navbar { backdrop-filter: saturate(140%) blur(8px); }
+    .nav-glass {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      padding: .35rem .75rem;
+    }
+    .btn-blur {
+      background: var(--glass);
+      border: none;
+      color: var(--brand);
+      border-radius: 999px;
+      padding: .6rem 1rem;
+      transition: all .25s ease;
+    }
+    .btn-blur:hover { background: #fff; box-shadow: var(--shadow); }
+
+   /* Navbar */
+   .navbar { backdrop-filter: saturate(140%) blur(8px); }
+   .nav-glass { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 999px; box-shadow: var(--shadow); padding: .35rem .75rem; }
+   .btn-blur { background: var(--glass); border: none; color: var(--brand); border-radius: 999px; padding: .6rem 1rem; transition: all .25s ease; }
+   .btn-blur:hover { background: #fff; box-shadow: var(--shadow); }
+
+    /* Slider Shell */
+    header{ position:relative; overflow:hidden; }
+    .slider{ position:relative; height:100vh; min-height:560px; }
+    .slider .list{ position:absolute; inset:0; }
+    .slider .list .item{ position:absolute; inset:0; opacity:0; transition:opacity .6s ease; }
+    .slider .list .item.active{ opacity:1; z-index:2; }
+    .slider .list .item img{ width:100%; height:100%; object-fit:cover; filter:brightness(70%); }
+    .slider .content{ position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); color:#fff; padding:0 6vw; max-width:1100px; margin:0 auto; }
+    .slider .content .badge{ display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:.35rem .8rem; font-weight:600; letter-spacing:.3px; backdrop-filter:blur(6px); }
+    .slider .content .title{ font-size:clamp(28px,4.2vw,56px); font-weight:800; text-shadow:0 10px 30px rgba(0,0,0,.45); }
+    .slider .content .type{ font-weight:700; opacity:.9; margin-bottom:.35rem; letter-spacing:.5px; }
+    .slider .content .description{ max-width:820px; line-height:1.6; font-size:1rem; opacity:.95; }
+    .slider .content .cta .btn{ border-radius:999px; }
+
+    /* Thumbnails */
+    .thumbnail{ position:absolute; bottom:18px; left:0; right:0; display:flex; gap:10px; justify-content:center; z-index:3; padding:0 14px; }
+    .thumbnail .item{ width:88px; height:58px; overflow:hidden; border-radius:8px; cursor:pointer; opacity:.6; border:2px solid transparent; }
+    .thumbnail .item.active{ opacity:1; border-color:#fff; }
+    .thumbnail .item img{ width:100%; height:100%; object-fit:cover; }
+
+    .nextPrevArrows {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      z-index: 3;
+    }
+    
+    .nextPrevArrows .prev {
+      position: absolute;
+      left: 0;
+      transform: translate(5px, -40%); /* optional small offset */
+    }
+    
+    .nextPrevArrows .next {
+      position: absolute;
+      right: 0;
+      transform: translate(-20px, -40%); /* optional small offset */
+    }
+    
+    .nextPrevArrows button {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, 0.75);
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .nextPrevArrows button:hover {
+      background: rgba(255, 255, 255, 0.95);
+    }
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+  
+    
+
+    /* Sections */
+    section{ padding:72px 0; }
+    .section-title{ color:var(--brand); font-weight:800; }
+
+    /* Achievements */
+    .ach-card{ background:#fff; border:1px solid #eef2f7; border-radius:16px; box-shadow:0 10px 30px rgba(2,6,23,.08); overflow:hidden; height:100%; }
+    .ach-card img{ width:100%; height:160px; object-fit:cover; }
+    .ach-card .body{ padding:16px; }
+
+    /* Counters */
+    .kpi{ background:linear-gradient(135deg,#ffffff 0%,#f8fbff 100%); border:1px solid #eef4ff; border-radius:16px; padding:24px; text-align:center; height:100%; }
+    .kpi h3{ color:var(--brand); font-weight:800; margin:0; font-size:2rem; }
+
+    /* Back to top */
+    .back-to-top{ position:fixed; bottom:20px; right:20px; z-index:999; }
+
+    @media (max-width: 767.98px){
+      .thumbnail{ display:none; }
+      .slider{ height:86vh; }
+    }
+  
+    :root {
+      --brand: #2979ff;      
+      --ink: #0f172a;        
+      --muted: #64748b;      
+      --surface: #0b1220;    
+      --glass: rgba(255, 255, 255, 0.75);
+      --radius: 1.25rem;     
+      --shadow: 0 10px 30px rgba(2, 6, 23, 0.15);
+    }
+
+    * { box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: var(--ink); }
+    a { text-decoration: none; }
+
+
+  /* Navbar */
+ /* Navbar */
+ .navbar { backdrop-filter: saturate(140%) blur(8px); }
+ .nav-glass { background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 999px; box-shadow: var(--shadow); padding: .35rem .75rem; }
+ .btn-blur { background: var(--glass); border: none; color: var(--brand); border-radius: 999px; padding: .6rem 1rem; transition: all .25s ease; }
+ .btn-blur:hover { background: #fff; box-shadow: var(--shadow); }
+
+    
+ .popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+}
+
+  </style>
+</head>
+<body>
+  
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top py-3 bg-white bg-opacity-75 border-bottom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="lo.jpeg" alt="TN-FUTECX Logo" style="width:150px;height:auto;" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav mx-auto nav-glass">
+          <li class="nav-item"><a class="nav-link px-3 active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link px-3 " href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="service.html">Our Expertise</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="team.html">Team</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+        </ul>
+       
+        <div class="ms-lg-3 mt-3 mt-lg-0" id="authSection">
+          <!-- Initially shows login -->
+          <button id="loginBtn" class="btn btn-blur">Login</button>
+        </div>
+        
+      </div>
+    </div>
+  </nav>
+
+
+
+  
+<!-- TN-FUTECX Custom Login Popup -->
+<div id="loginPopup" class="popup-overlay">
+  <div class="popup-box">
+    <h2>⚠️ Login Required</h2>
+    <p>To continue exploring <strong>TN-FUTECX</strong>, please login to your account.</p>
+    <div class="popup-actions">
+      <button id="loginNow" class="btn btn-primary">Login Now</button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* === TN-FUTECX Popup Design === */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.popup-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  text-align: center;
+  padding: 30px 40px;
+  width: 350px;
+  animation: popupSlide 0.4s ease-in-out;
+}
+
+.popup-box h2 {
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.popup-box p {
+  color: #333;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.popup-actions .btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popupSlide {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+</style>
+
+  <!-- HERO SLIDER (UPDATED) -->
+  <header>
+    <div class="slider" id="heroSlider">
+      <div class="list">
+        <!-- Slide 1: Upcoming AI Project -->
+        <div class="item active">
+          <img src="TE.jpg" alt="Upcoming AI Project" />
+          <div class="content" data-aos="fade-up">
+            <span class="badge mb-2"><i class="fas fa-rocket mr-2"></i>UPCOMING</span>
+            <div class="title">Project‑C — Next‑Gen AI Suite</div>
+            <div class="type">Releasing Soon</div>
+            <div class="description">A production‑ready set of AI components (LLMs, NLP, MLOps) designed for 2030‑scale applications. Private beta invites rolling out to partners.</div>
+            <div class="cta mt-3">
+              <a href="#upcoming" class="btn btn-primary btn-lg mr-2"><i class="fas fa-bell mr-2"></i>Get Notified</a>
+              <a href="about.html" class="btn btn-outline-light btn-lg">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2: 200+ Interns -->
+        <div class="item">
+          <img src="C.jpg" alt="Community & Interns" />
+          <div class="content" data-aos="fade-up">
+            <span class="badge mb-2"><i class="fas fa-users mr-2"></i>Community</span>
+            <div class="title">200+ Interns & Contributors</div>
+            <div class="type">Learning • Building • Shipping</div>
+            <div class="description">A thriving network of student developers and mentors collaborating on real‑world projects, workshops, and open‑source initiatives.</div>
+            <div class="cta mt-3">
+              <a href="#stats" class="btn btn-primary btn-lg mr-2"><i class="fas fa-chart-line mr-2"></i>See Impact</a>
+              <a href="#join" class="btn btn-outline-light btn-lg"><i class="fas fa-user-plus mr-2"></i>Join as Intern</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3: Anniversary 27 Sep 2025 -->
+        <div class="item">
+          <img src="FF.jpeg" alt="Anniversary" />
+          <div class="content" data-aos="fade-up">
+            <span class="badge mb-2"><i class="fas fa-calendar-alt mr-2"></i>Event</span>
+            <div class="title">TN‑FUTECX Anniversary</div>
+            <div class="type">27 Sep 2026 • Thanjavur</div>
+            <div class="description">Celebration, demos, lightning talks, and awards. RSVP opens soon. Save the date and be part of the milestone! 🎉</div>
+            <div class="cta mt-3">
+              <a href="#event" class="btn btn-primary btn-lg mr-2"><i class="fas fa-bookmark mr-2"></i>Save Date</a>
+              <a href="#newsletter" class="btn btn-outline-light btn-lg"><i class="fas fa-envelope-open-text mr-2"></i>Get Updates</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 4: New Team Application -->
+        <div class="item">
+          <img src="W.png" alt="Join the Team" />
+          <div class="content" data-aos="fade-up">
+            <span class="badge mb-2"><i class="fas fa-id-badge mr-2"></i>Open</span>
+            <div class="title">Apply to the New Core Team</div>
+            <div class="type">Interest Form Open</div>
+            <div class="description">We’re recruiting builders across AI/ML, Full‑Stack, DevOps, Design, and Community. Lead tracks, mentor cohorts, and ship v3 projects.</div>
+            <div class="cta mt-3">
+              <a id="applyLink" href="#join" class="btn btn-primary btn-lg mr-2"><i class="fas fa-paper-plane mr-2"></i>Apply Now</a>
+              <a href="team.html" class="btn btn-outline-light btn-lg"><i class="fas fa-users mr-2"></i>Meet the Team</a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 5: Explore Achievements -->
+        <div class="item">
+          <img src="SL.jpg" alt="Achievements" />
+          <div class="content" data-aos="fade-up">
+            <span class="badge mb-2"><i class="fas fa-trophy mr-2"></i>Highlights</span>
+            <div class="title">Explore FUTECX Achievements</div>
+            <div class="type">Wins • Launches • Mentorship</div>
+            <div class="description">Catch up on hackathon wins, product launches, talks, and collaborations. Fully updated and searchable—nothing missed.</div>
+            <div class="cta mt-3">
+              <a href="#achievements" class="btn btn-primary btn-lg mr-2"><i class="fas fa-list-check mr-2"></i>View All</a>
+              <a href="about.html" class="btn btn-outline-light btn-lg"><i class="fas fa-info-circle mr-2"></i>About Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thumbnails -->
+      <div class="thumbnail">
+        <div class="item active"><img src="TE.jpg" alt="Upcoming" /></div>
+        <div class="item"><img src="C.jpg" alt="Interns" /></div>
+        <div class="item"><img src="FF.jpeg" alt="Anniversary" /></div>
+        <div class="item"><img src="W.png" alt="Apply" /></div>
+        <div class="item"><img src="SL.jpg" alt="Achievements" /></div>
+      </div>
+
+      <!-- Arrows -->
+      <div class="nextPrevArrows">
+        <button class="prev"> < </button>
+        <button class="next"> > </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- IMPACT STATS -->
+  <section id="stats" class="bg-light" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+      <div class="row mb-3"><div class="col text-center"><h2 class="section-title">Our Impact</h2><p class="text-muted">Growing community, real shipping.</p></div></div>
+      <div class="row g-3">
+        <div class="col-6 col-md-3 mb-3"><div class="kpi h-100"><h3 data-count="200">0</h3><p class="mb-0">Interns</p></div></div>
+        <div class="col-6 col-md-3 mb-3"><div class="kpi h-100"><h3 data-count="24">0</h3><p class="mb-0">Projects</p></div></div>
+        <div class="col-6 col-md-3 mb-3"><div class="kpi h-100"><h3 data-count="15">0</h3><p class="mb-0">Workshops</p></div></div>
+        <div class="col-6 col-md-3 mb-3"><div class="kpi h-100"><h3 data-count="8">0</h3><p class="mb-0">Partners</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING -->
+  <section id="upcoming" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+      <div class="row mb-3"><div class="col text-center"><h2 class="section-title">Upcoming</h2><p class="text-muted">What’s launching next at TN‑FUTECX.</p></div></div>
+      <div class="row">
+        <div class="col-md-6 mb-3"><div class="ach-card h-100">
+          <img src="llms.jpeg" alt="Project‑C" />
+          <div class="body">
+            <h5 class="mb-1">Project‑C Private Beta</h5>
+            <p class="text-muted mb-2">LLM & NLP components with MLOps pipelines. Sign‑ups for pilot partners.</p>
+            <a href="#newsletter" class="btn btn-primary btn-sm"><i class="fas fa-bell mr-2"></i>Notify Me</a>
+          </div>
+        </div></div>
+        <div class="col-md-6 mb-3"><div class="ach-card h-100">
+          <img src="K.jpg" alt="Anniversary" />
+          <div class="body">
+            <h5 class="mb-1">Anniversary Celebration</h5>
+            <p class="text-muted mb-2">27 Sep 2026 • Demos, lightning talks, awards. RSVP opens soon.</p>
+            <a href="#event" class="btn btn-outline-primary btn-sm"><i class="far fa-calendar-check mr-2"></i>Save the Date</a>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS (Auto‑render from JS data) -->
+  <section id="achievements" class="bg-light" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+      <div class="row mb-3"><div class="col text-center"><h2 class="section-title">Latest Achievements</h2><p class="text-muted">Fully updated—no misses.</p></div></div>
+      <div class="row" id="achGrid"></div>
+    </div>
+  </section>
+
+  <!-- JOIN / APPLY -->
+  <section id="join" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 mb-3 mb-lg-0">
+          <h2 class="section-title">Join the New Team</h2>
+          <p class="text-muted mb-2">Open roles across AI/ML, Full‑Stack, DevOps, Design, and Community. Lead tracks and mentor cohorts.</p>
+          <p class="mb-0"><i class="fas fa-info-circle mr-2"></i>Tip: Replace <code>TEAM_FORM_URL</code> below with your actual Interest Form / Google Form link.</p>
+        </div>
+        <div class="col-lg-4 text-lg-right">
+          <a id="applyBtn" href="#" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane mr-2"></i>Apply via Interest Form</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (kept) -->
+   
+   
+
+  <div class="container-fluid bg-dark text-light footer pt-5 mt-5" id="newsletter">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Quick Links</h4>
+          <a class="btn btn-link" href="#">About TN‑FUTECX</a>
+          <a class="btn btn-link" href="contact.html">Contact Us</a>
+          <a class="btn btn-link" href="#">Privacy Policy</a>
+          <a class="btn btn-link" href="#">Terms & Conditions</a>
+          <a class="btn btn-link" href="#">FAQs & Help</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Contact</h4>
+          <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>143 TN‑Future Tech Park, Thanjavur, India</p>
+          <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9876543210</p>
+          <p class="mb-2"><i class="fa fa-envelope me-3"></i>younginnovator2024@gmail.com</p>
+          <div class="d-flex pt-2">
+            <a class="btn btn-outline-light btn-social" href="https://x.com/RAshwin2k"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-outline-light btn-social" href="https://g.dev/AshwinRamakrishnan"><i class="fab fa-google"></i></a>
+            <a class="btn btn-outline-light btn-social" href="https://github.com/AshwinRamakrishnan"><i class="fab fa-github"></i></a>
+            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/ashwin-ramakrishnan-b328a6298"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Gallery</h4>
+          <div class="row g-2 pt-2">
+            <div class="col-4"><img class="img-fluid bg-light p-1" src="AII.jpeg" alt="Project 1"></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1" src="ml.jpeg" alt="Project 2"></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1" src="ai.jpeg" alt="Project 3"></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1" src="Meeravathi.jpeg" alt="Project 4"></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1" src="king.jpeg" alt="Project 5"></div>
+            <div class="col-4"><img class="img-fluid bg-light p-1" src="nlp.jpeg" alt="Project 6"></div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Newsletter</h4>
+          <p>Stay updated with the latest from TN‑FUTECX. Subscribe to our newsletter.</p>
+          <div class="position-relative mx-auto" style="max-width: 400px;">
+            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" />
+            <button id="subscribe-btn" type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+              Subscribe
+            </button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">&copy; <a class="border-bottom" href="#">TN‑FUTECX</a>, All Rights Reserved.</div>
+          <div class="col-md-6 text-center text-md-end">
+            <div class="footer-menu">
+              <a href="#">Home</a>
+              <a href="#">Cookies</a>
+              <a href="#">Help</a>
+              <a href="#">FAQs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // HERO SLIDER JS (autoplay + thumbnails + arrows)
+    (function(){
+      const slider = document.getElementById('heroSlider');
+      const slides = slider.querySelectorAll('.list .item');
+      const thumbs = slider.querySelectorAll('.thumbnail .item');
+      const prev = slider.querySelector('.prev');
+      const next = slider.querySelector('.next');
+      let index = 0, timer;
+
+      function setActive(i){
+        slides[index].classList.remove('active');
+        thumbs[index].classList.remove('active');
+        index = (i + slides.length) % slides.length;
+        slides[index].classList.add('active');
+        thumbs[index].classList.add('active');
+        restart();
+      }
+      function go(n){ setActive(index + n); }
+      function restart(){ clearInterval(timer); timer = setInterval(()=>go(1), 6000); }
+
+      thumbs.forEach((t,i)=> t.addEventListener('click', ()=> setActive(i)));
+      prev.addEventListener('click', ()=> go(-1));
+      next.addEventListener('click', ()=> go(1));
+      restart();
+
+      // Back-to-top
+      document.querySelector('.back-to-top')?.addEventListener('click', (e)=>{ e.preventDefault(); window.scrollTo({ top:0, behavior:'smooth' }); });
+    })();
+
+    // KPIs counter animation
+    (function(){
+      const els = document.querySelectorAll('[data-count]');
+      const obs = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            const el = e.target; const target = +el.getAttribute('data-count'); let cur = 0; const step = Math.max(1, Math.floor(target/120));
+            const tick = ()=>{ cur += step; if(cur >= target){ el.textContent = target.toLocaleString(); } else { el.textContent = cur.toLocaleString(); requestAnimationFrame(tick); } };
+            requestAnimationFrame(tick); obs.unobserve(el);
+          }
+        });
+      }, { threshold:.6 });
+      els.forEach(el=> obs.observe(el));
+    })();
+
+    // ACHIEVEMENTS DATA → Render cards (Edit this array to keep everything up-to-date)
+    const achievements = [
+      // Sample entries — duplicate & edit to add more
+      { title:'Hackathon Win — Vision AI', detail:'Campus‑wide buildathon, 1st place for real‑time defect detection.', img:'ai.jpeg', link:'#' },
+      { title:'Workshop — Hands‑on LLMs', detail:'150+ students trained on prompt engineering & RAG.', img:'llms.jpeg', link:'#' },
+      { title:'Open‑source — Dataset Cleaner', detail:'Released CLI for dataset audit & curation.', img:'ml.jpeg', link:'#' },
+      { title:'Collab — Local SME App', detail:'Deployed inventory assistant for local business.', img:'W.png', link:'#' }
+    ];
+    (function renderAchievements(){
+      const grid = document.getElementById('achGrid');
+      if(!grid) return;
+      grid.innerHTML = achievements.map((a)=> `
+        <div class="col-md-6 col-lg-3 mb-3">
+          <div class="ach-card h-100">
+            <img src="${a.img}" alt="${a.title}">
+            <div class="body">
+              <h6 class="mb-1">${a.title}</h6>
+              <p class="text-muted mb-2">${a.detail}</p>
+              <a href="${a.link}" class="btn btn-sm btn-outline-primary">Details</a>
+            </div>
+          </div>
+        </div>`).join('');
+    })();
+
+    // Interest Form link (Replace TEAM_FORM_URL with your form)
+    const TEAM_FORM_URL = 'https://example.com/your-interest-form';
+    document.getElementById('applyBtn').setAttribute('href', TEAM_FORM_URL);
+    document.getElementById('applyLink').setAttribute('href', TEAM_FORM_URL);
+
+    /* Scroll Effect */
+window.addEventListener("scroll", () => {
+  const nav = document.querySelector(".nav-glass");
+  if (window.scrollY > 40) {
+    nav.style.background = "rgba(255, 255, 255, 0.9)";
+    nav.style.backdropFilter = "saturate(180%) blur(14px)";
+    nav.style.boxShadow = "0 4px 16px rgba(0,0,0,0.1)";
+  } else {
+    nav.style.background = "rgba(255, 255, 255, 0.65)";
+    nav.style.backdropFilter = "saturate(160%) blur(12px)";
+    nav.style.boxShadow = "var(--shadow)";
+  }
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("loginPopup");
+  const loginPopupBtn = document.getElementById("loginNow");
+  const authSection = document.getElementById("authSection");
+
+  // Login check
+  const user = localStorage.getItem("loggedInUser");
+
+  // Navbar update
+  if (user) {
+    authSection.innerHTML = `
+      <div class="dropdown">
+        <button class="btn btn-blur dropdown-toggle" type="button" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+          👤 ${user.split("@")[0]}
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="userMenu">
+          <li><span class="dropdown-item-text">${user}</span></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+      </div>
+    `;
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("loggedInUser");
+      alert("You have logged out successfully!");
+      window.location.reload();
+    });
+  } else {
+    authSection.innerHTML = `<button id="loginBtn" class="btn btn-blur">Login</button>`;
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      window.location.href = "login.html";
+    });
+  }
+
+  // Show popup after 30 sec if not logged in
+  if (!user) {
+    setTimeout(() => {
+      popup.style.display = "flex";
+    }, 30000); // 30 seconds
+  }
+
+  // Redirect when click login now
+  loginPopupBtn.addEventListener("click", () => {
+    window.location.href = "login.html";
+  });
+});
+
+
+  
+</script>
+</body>
+</html>
